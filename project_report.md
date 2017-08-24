@@ -39,7 +39,7 @@ I used the numpy library to calculate summary statistics of the traffic signs da
 ### Samples: 
 ![alt text][image1]
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data is distributed among the classes for each of the sets
+Here is an exploratory visualization of the data set. It is a bar chart showing how the data is distributed among the classes for each of the sets. The histograms show that data is distributed similarly for each of the datasets. 
 
 ### Training: 
 ![alt text][image2]
@@ -50,37 +50,41 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 ### Testing: 
 ![alt text][image4]
 
+
 ## Design and Test a Model Architecture
 
 ### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
 I chose to keep the images in color as converting them to grayscale would not provide much benefit except for little bump in speed. I normalized the images so that the mean in zero and the intensity values are between -1. and +1. Normalization is an important step to ensure the model treats all weights equally. 
 
-I did not plan to generating additional data. This can be done by basic transformation on original image and warping. I wanted to assess the performance with only the provided data first. If the 
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
+I did not plan to generating additional data. I wanted to first evaluate the performance of the model before generating new data. Additional data can be generated using  basic transformations on original image - such as shifting pixels or warping. 
 
 
-
-The difference between the original data set and the augmented data set is the following ... 
-
-
-####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Convolution 5x5     	| 1x1 stride, Valid padding, outputs 28x28x6 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+| Convolution 5x1     	| 1x1 stride, Valid padding, outputs 24x28x12 	|
+| RELU					|												|
+| Convolution 1x5     	| 1x1 stride, Valid padding, outputs 24x24x24 	|
+| RELU					|												|
+| Convolution 5x5     	| 1x1 stride, Valid padding, outputs 20x20x36 	|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  outputs 10x10x36 				|
+| Convolution 3x3     	| 1x1 stride, Valid padding, outputs 8x8x48 	|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  outputs 4x4x48 				|
+| Fully connected	- 256 units	| Dropout with keep_prob 0.75        									|
+| RELU					|												|
+| Fully connected	- 64 units	| Dropout with keep_prob 0.75        									|
+| RELU					|												|
+| Fully connected	- 43 units	|      									|
+| Softmax				|         									|
  
 
 
