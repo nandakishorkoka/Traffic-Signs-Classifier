@@ -100,7 +100,7 @@ To train the model, I used the Adam optimizer with batch size of 128 and learnin
 I first using the same architecture of Lenet to observe how well the model performs on the data. I was able to achieve a validation accuracy of ~ 90%. From there, I explored techniques on good practices for CNNs. I modified the network to be more deeper and used smaller receptive fields. These changes provided a bump in performance to ~ 97%. Applying dropouts further helped the accuracy. 
 
 My final model results were:
-* training set accuracy of 
+* training set accuracy of 97.1
 * validation set accuracy of 95.7
 * test set accuracy of 94.5
 
