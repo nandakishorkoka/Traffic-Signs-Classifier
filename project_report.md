@@ -31,20 +31,18 @@ I used the numpy library to calculate summary statistics of the traffic signs da
 * The shape of a traffic sign image is 32x32x3
 * The number of unique classes/labels in the data set is 43
 
-####2. Include an exploratory visualization of the dataset.
-
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
-
 [image1]: ./examples/train_hist.png "Training Data"
 [image2]: ./examples/valid_hist.png "Validation Data"
 [image3]: ./examples/test_hist.png "Testing Data"
 
 
+####2. Include an exploratory visualization of the dataset.
 
-
-
+Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
 
 ![alt text][image1]
+![alt text][image2]
+![alt text][image3]
 
 ###Design and Test a Model Architecture
 
@@ -54,7 +52,7 @@ As a first step, I decided to convert the images to grayscale because ...
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![alt text][image2]
+
 
 As a last step, I normalized the image data because ...
 
@@ -64,7 +62,7 @@ To add more data to the the data set, I used the following techniques because ..
 
 Here is an example of an original image and an augmented image:
 
-![alt text][image3]
+
 
 The difference between the original data set and the augmented data set is the following ... 
 
