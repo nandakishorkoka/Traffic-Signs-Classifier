@@ -1,6 +1,6 @@
-### Traffic Sign Recognition 
+# Traffic Sign Recognition 
 
-**Overview: Traffic Sign Recognition Project**
+## Overview: Traffic Sign Recognition Project
 
 The goals / steps of this project are the following:
 * Load the data set (see below for links to the project data set)
@@ -13,15 +13,18 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
+[image1]: ./examples/samples.png "Samples"
+[image2]: ./examples/train_hist.png "Training Data"
+[image3]: ./examples/valid_hist.png "Validation Data"
+[image4]: ./examples/test_hist.png "Testing Data"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 
-### Data Set Summary & Exploration
+## Data Set Summary & Exploration
 
-** 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.** 
+### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
 I used the numpy library to calculate summary statistics of the traffic signs data set:
 
@@ -31,20 +34,23 @@ I used the numpy library to calculate summary statistics of the traffic signs da
 * The shape of a traffic sign image is 32x32x3
 * The number of unique classes/labels in the data set is 43
 
-[image1]: ./examples/train_hist.png "Training Data"
-[image2]: ./examples/valid_hist.png "Validation Data"
-[image3]: ./examples/test_hist.png "Testing Data"
+### 2. Include an exploratory visualization of the dataset.
 
-
-####2. Include an exploratory visualization of the dataset.
-
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
-
+### Samples: 
 ![alt text][image1]
+
+Here is an exploratory visualization of the data set. It is a bar chart showing how the data is distributed among the classes for each of the sets
+
+### Training: 
 ![alt text][image2]
+
+### Validation: 
 ![alt text][image3]
 
-###Design and Test a Model Architecture
+### Testing: 
+![alt text][image4]
+
+## Design and Test a Model Architecture
 
 ####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
