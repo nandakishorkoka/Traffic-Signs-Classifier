@@ -117,41 +117,90 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image5] ![alt text][image6] ![alt text][image7] 
 ![alt text][image8] ![alt text][image9] ![alt text][image10]
 
-The first image might be difficult to classify because ...
+The 5th image is difficult to classify as it is similar to "General Caution" at low resolution and that might confuse the model. I expected the model to work well on all other images 
 
 
-
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Children crossing      		| Children crossing   									| 
+| Speed limit (60km/h)     			| Keep right 										|
+| Speed limit (30km/h)					| Speed limit (30km/h)											|
+| Stop      		| Turn left ahead					 				|
+| Pedestrians			| Pedestrians      							|
+| Right-of-way at the next intersection			| Right-of-way at the next intersection      							|
 
+The model was able to correctly guess 4 of the 6 traffic signs, which gives an accuracy of 67%. However, I am not quite sure of why the model confuses "Stop sign" with "Turn left ahead"
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+The code for making predictions on my final model is located in the 32nd cell of the Ipython notebook.
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
-
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model is relatively sure that this is a Children Crossing sign (probability of 0.57). The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+0.57 | Children crossing
+0.21 | Speed limit (20km/h)
+0.16 | Dangerous curve to the right
+0.06 | Speed limit (60km/h)
+0.01 | Go straight or right
 
 
-For the second image ... 
+For the second image, the model predicts incorrectly. The actual sign is 60km speed limit but is nowhere in the top five.
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+0.34 | Keep right
+0.25 | General caution
+0.23 | Wild animals crossing
+0.11 | Speed limit (30km/h)
+0.07 | Speed limit (50km/h)
+
+
+For the third image, the model is relatively sure that this is a 30km speed limit sign (probability of 0.51). The top five soft max probabilities were
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+0.51 | Speed limit (30km/h)
+0.19 | Speed limit (50km/h)
+0.11 | Speed limit (60km/h)
+0.1 | Speed limit (70km/h)
+0.08 | Speed limit (20km/h)
+
+For the fourth image, the model is relatively sure that this is a turn left ahead sign (probability of 0.43). This is where the model is getting it wrong and stop sign is nowhere in the top five. 
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+0.43 | Turn left ahead
+0.21 | Keep right
+0.13 | Keep left
+0.11 | Turn right ahead
+0.11 | Beware of ice/snow
+
+For the fifth image, the model is relatively sure that this is a pedestrians (probability of 0.38). 
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+0.38 | Pedestrians
+0.26 | General caution
+0.17 | Road narrows on the right
+0.11 | Dangerous curve to the right
+0.09 | Keep left 
+
+
+For the sixth image, the model is relatively sure that this is a Right of way at next intersection (probability of 0.45). 
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+0.45 | Right-of-way at the next intersection
+0.24 | General caution
+0.14 | Priority road
+0.1 | Pedestrians
+0.06 | Road work 
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 ####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
