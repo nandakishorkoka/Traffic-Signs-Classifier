@@ -17,10 +17,12 @@ The goals / steps of this project are the following:
 [image2]: ./examples/train_hist.png "Training Data"
 [image3]: ./examples/valid_hist.png "Validation Data"
 [image4]: ./examples/test_hist.png "Testing Data"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image5]: ./images/1.png "Traffic Sign 1"
+[image6]: ./images/2.png "Traffic Sign 2"
+[image7]: ./images/3.png "Traffic Sign 3"
+[image8]: ./images/4.png "Traffic Sign 4"
+[image9]: ./images/5.png "Traffic Sign 5"
+[image10]: ./images/6.png "Traffic Sign 6"
 
 ## Data Set Summary & Exploration
 
@@ -62,6 +64,8 @@ I did not plan to generating additional data. I wanted to first evaluate the per
 
 ### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
+I explored external resources and papers on choosing filter depths and kernel sizes for CNNs. Some good techniques were using multiple smaller receptive fields than a single larger receptive fields - for e.g. 2 3x3 convolution layer instead of a single 7x7 convolution. Secondly, a stack of 1x5 convolution and a 5x1 convolution seems to learn better representation than a single 5x5 convolution. I applied max pooling at the end of the stack to reduce information loss. 
+
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
@@ -87,41 +91,35 @@ My final model consisted of the following layers:
 | Softmax				|         									|
  
 
+### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+To train the model, I used the Adam optimizer with batch size of 128 and learning rate of 0.001 and 20 epochs. However the accuracy plateaus much sooner and 10 Epochs is sufficient. I did not explore tuning the hyperparameters as I was already achieving ~97% on the validation set. 
 
-To train the model, I used an ....
+### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+I first using the same architecture of Lenet to observe how well the model performs on the data. I was able to achieve a validation accuracy of ~ 90%. From there, I explored techniques on good practices for CNNs. I modified the network to be more deeper and used smaller receptive fields. These changes provided a bump in performance to ~ 97%. Applying dropouts further helped the accuracy. 
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 
+* validation set accuracy of 95.7
+* test set accuracy of 94.5
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+I found the following techniques useful: 
+* using multiple smaller receptive fields than a single larger receptive fields - for e.g. 2 3x3 convolution layer instead of a single 7x7 convolution. 
+* a stack of 1x5 convolution and a 5x1 convolution seems to learn better representation than a single 5x5 convolution.
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+## Test a Model on New Images
 
-###Test a Model on New Images
-
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image5] ![alt text][image6] ![alt text][image7] 
+![alt text][image8] ![alt text][image9] ![alt text][image10]
 
 The first image might be difficult to classify because ...
+
+
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
