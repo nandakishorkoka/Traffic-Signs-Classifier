@@ -202,7 +202,9 @@ For the sixth image, the model is relatively sure that this is a Right of way at
 0.1 | Pedestrians
 0.06 | Road work 
 
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+##  (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
+### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+
+Refer to cells 49 to 53 in the ipython notebook. The cells display the feature maps in each of the different layers. A each layer the the feature maps capture two important attributes - the shape of the sign and the text "Stop". I notice that a lot of the feature maps are completely blank and therefore leading to incorrect predictions. I feels there is scope for improvement observing the feature maps. 
 
 
