@@ -83,6 +83,7 @@ My final model consisted of the following layers:
 | Convolution 3x3     	| 1x1 stride, Valid padding, outputs 8x8x48 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 4x4x48 				|
+| Flatten            | Output 768 unit                 | 
 | Fully connected	- 256 units	| Dropout with keep_prob 0.75        									|
 | RELU					|												|
 | Fully connected	- 64 units	| Dropout with keep_prob 0.75        									|
