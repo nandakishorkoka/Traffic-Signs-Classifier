@@ -88,8 +88,7 @@ My final model consisted of the following layers:
 | RELU					|												|
 | Fully connected	- 64 units	| Dropout with keep_prob 0.75        									|
 | RELU					|												|
-| Fully connected	- 43 units	|      									|
-| Softmax				|         									|
+| Output Layer	- 43 units	|      									|
  
 
 ### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
@@ -129,7 +128,7 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image5] ![alt text][image6] ![alt text][image7] 
 ![alt text][image8] ![alt text][image9] ![alt text][image10]
 
-The 5th image is difficult to classify as it is similar to "General Caution" at low resolution and that might confuse the model. I expected the model to work well on all other images 
+The 5th image is difficult to classify as it is similar to "General Caution" at low resolution and that might confuse the model. Also, the speed limit signs are very similar in shape. This might confuse the model as well. I expect the model to work well on all other images.
 
 
 ### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
